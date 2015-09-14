@@ -13,12 +13,12 @@ RSpec.describe Cat, type: :model do
 
 	end
 
-	xit 'has a life story' do
+	it 'has a life story' do
 		cat = Cat.create(life_story: "life is pain")
 		expect(cat.life_story).to eq("life is pain") 
 	end
 
-	xit 'has lives' do
+	it 'has lives' do
 		cat = Cat.create(lives: 9)
 		expect(cat.lives).to eq(9)
 	end
