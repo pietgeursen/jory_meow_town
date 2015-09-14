@@ -23,7 +23,17 @@ RSpec.describe Cat, type: :model do
 		expect(cat.lives).to eq(9)
 	end
 
-	xdescribe 'cat loses lives and is removed from db when zero' do
+	describe 'cat loses lives and is removed from db when zero' do
+		
+		it 'loses lives' do
+			cat = Cat.create(lives: 9)
+			cat.subtract_life!
+			expect(cat.lives).to eq(8)
+		end
+		
+		xit 'removes itself from data base when zero' do
+		end
+
 	end
 
 end
