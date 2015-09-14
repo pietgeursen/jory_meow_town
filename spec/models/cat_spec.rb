@@ -31,7 +31,9 @@ RSpec.describe Cat, type: :model do
 			expect(cat.lives).to eq(8)
 		end
 		
-		xit 'removes itself from data base when zero' do
+		it 'removes itself from data base when zero' do
+			cat = Cat.create(lives: 1)
+			expect{cat.subtract_life!}.to change{Cat.all.length}.by(-1)
 		end
 
 	end
