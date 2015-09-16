@@ -1,5 +1,5 @@
 class CatsController < ApplicationController
 	def index
-		head 200
+		@cats = Cat.all
 	end
 end
