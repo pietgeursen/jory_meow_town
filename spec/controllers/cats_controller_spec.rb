@@ -15,7 +15,8 @@ RSpec.describe CatsController, type: :controller do
 		end
 
 		it 'check that it assigns the cat variable' do
-			a_cat = Cat.create
+			a_cat = Cat.new
+			allow(Cat).to receive(:all) {[a_cat]}
 			get :index
 			expect(assigns(:cats)).to eq([a_cat])
 		end
